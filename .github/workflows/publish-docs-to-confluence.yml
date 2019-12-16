@@ -25,7 +25,7 @@ jobs:
 
       # TODO: publish the slate documentation
       - name: Publish documentation to public slate
-        run: './deploy'
+        run: './deploy.sh'
 
       # TODO: publish index.html.md and create namespaced paths for all things under includes.
       # E.g ./source/includes/iam/_index.md should create folder iam under the API Docs parent
