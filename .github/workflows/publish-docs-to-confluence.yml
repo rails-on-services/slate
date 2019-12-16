@@ -9,6 +9,7 @@ jobs:
     # This job runs on Linux
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - name: Install Markdown2Confluence
         run: |
@@ -20,4 +21,4 @@ jobs:
           CONFLUENCE_ENDPOINT: ${{ secrets.CONFLUENCE_ENDPOINT }}
           CONFLUENCE_PASSWORD: ${{ secrets.CONFLUENCE_PASSWORD }}
           CONFLUENCE_USERNAME: ${{ secrets.CONFLUENCE_USERNAME }}
-        run: markdown2confluence --space 'WD' --parent 'API Docs' includes/iam/_index.md
+        run: markdown2confluence --space 'WD' --parent 'API Docs' ./source/includes/iam/_index.md
