@@ -26,7 +26,6 @@ jobs:
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
-          bundle exec rake
 
       - name: Publish documentation to Confluence
         env: # Or as an environment variable
@@ -44,3 +43,6 @@ jobs:
       # and the file index under it.
 
       # TODO: Only publish the files changed since the last merge
+
+      # TODO: Wrap this into a docker image action so we don't need to install
+      # all the gems every time
