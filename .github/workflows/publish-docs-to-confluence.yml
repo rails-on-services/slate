@@ -18,10 +18,10 @@ jobs:
           sudo tar -xzvf markdown2confluence_3.0.2_linux_x86_64.tar.gz -C /usr/local/bin/ markdown2confluence
 
       - name: Build and test with Rake
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
-        bundle exec rake
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rake
 
       - name: Publish documentation to Confluence
         env: # Or as an environment variable
